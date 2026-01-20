@@ -559,7 +559,12 @@ h1{
   box-shadow: var(--shadow);
 }
 
-.about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+.about-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+}
+
 
 .ticks{ margin-top:10px; display:grid; gap:10px; list-style:none; }
 .ticks li{ color:var(--muted); font-weight:900; }
@@ -804,4 +809,16 @@ h1{
   box-shadow:
     0 40px 100px rgba(0,0,0,.65),
     0 0 30px rgba(0,212,255,.14);
+}
+.startup-link{
+  color: var(--text);
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,.3);
+  padding-bottom:2px;
+  transition: .25s;
+}
+.startup-link:hover{
+  color: #00D4FF;
+  border-bottom-color: rgba(0,212,255,.7);
 }
