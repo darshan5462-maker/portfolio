@@ -1,670 +1,958 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darshan | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-</head>
-
-<body>
-  
-  <header class="nav">
-    <div class="container nav-wrap">
-      <a class="logo" href="#home">
-        <span class="logo-dot"></span> Darshan<span class="muted">.dev</span>
-      </a>
-
-      <nav class="menu" id="menu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Work</a>
-        <a href="#contact">Contact</a>
-        <a class="btn small" href="#contact">Hire Me</a>
-      </nav>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
- 
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <div class="badge">
-          <i class="fa-solid fa-sparkles"></i>
-          Available for projects • 2026
-        </div>
-
-        <h1>
-          Hi, I’m <span class="gradient">Darshan</span> 👋 <br />
-          I build modern <span class="underline">Web Apps</span> that feel premium.
-        </h1>
-
-        <p class="lead">
-          I create websites with clean UI, strong backend logic, responsive design, and smooth user experience.
-          I love building real-life projects like delivery systems, e-commerce, dashboards, and hackathon apps.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn" href="#projects">
-            <i class="fa-solid fa-briefcase"></i> View Projects
-          </a>
-          <a class="btn ghost" href="#contact">
-            <i class="fa-solid fa-paper-plane"></i> Contact Me
-          </a>
-        </div>
-
-        <div class="social">
-          <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <h3>10+</h3>
-            <p>Projects Built</p>
-          </div>
-          <div class="stat">
-            <h3>2026</h3>
-            <p>Focused Growth</p>
-          </div>
-          <div class="stat">
-            <h3>UI + Backend</h3>
-            <p>Full Stack</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="profile">
-          <div class="profile-pic">
-           
-            <img src="assets/profile.jpg" alt="Darshan profile photo" onerror="this.style.display='none'; this.parentElement.classList.add('fallback');"/>
-            <div class="fallback-text">
-              <span>D</span>
-            </div>
-          </div>
-          <div class="profile-info">
-            <h2>Darshan Mang</h2>
-            <p>Frontend + Backend Developer</p>
-            <div class="chips">
-              <span><i class="fa-solid fa-code"></i> Web Developer</span>
-              <span><i class="fa-solid fa-bolt"></i> Fast Learner</span>
-              <span><i class="fa-solid fa-crown"></i> Modern UI</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="quick">
-          <div class="quick-item">
-            <p class="q-title">Tech Stack</p>
-            <p class="q-desc">HTML • CSS • JS • Node.js • Firebase • MySQL</p>
-          </div>
-          <div class="quick-item">
-            <p class="q-title">Best Work</p>
-            <p class="q-desc">E-Commerce • Delivery App • Hackathon Dashboard</p>
-          </div>
-          <div class="quick-item">
-            <p class="q-title">Goal</p>
-            <p class="q-desc">Build premium websites that clients love.</p>
-          </div>
-        </div>
-
-        <div class="glow"></div>
-      </div>
-    </div>
-
-    <div class="floating">
-      <span class="float-card"><i class="fa-solid fa-shield"></i> Secure Login</span>
-      <span class="float-card"><i class="fa-solid fa-mobile-screen"></i> Mobile First</span>
-      <span class="float-card"><i class="fa-solid fa-rocket"></i> High Performance</span>
-    </div>
-  </section>
-
-  
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About Me</h2>
-        <p>I’m passionate about building clean & powerful web experiences.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="card glass">
-          <h3>Who am I?</h3>
-          <p>
-            I’m Darshan — a developer who loves building modern websites and full-stack applications.
-            I focus on UI design + backend logic, so projects look good and work perfectly.
-          </p>
-          <p class="muted">
-            I enjoy creating e-commerce systems, delivery platforms, and hackathon projects.
-          </p>
-        </div>
-
-        <div class="card glass">
-          <h3>What I do best</h3>
-          <ul class="ticks">
-            <li><i class="fa-solid fa-check"></i> Responsive UI (mobile + desktop)</li>
-            <li><i class="fa-solid fa-check"></i> Backend APIs (Node.js)</li>
-            <li><i class="fa-solid fa-check"></i> Firebase auth + database</li>
-            <li><i class="fa-solid fa-check"></i> MySQL integration</li>
-            <li><i class="fa-solid fa-check"></i> Clean project structure</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
- 
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-title">
-        <h2>Skills</h2>
-        <p>Tools I use to build beautiful and scalable apps.</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill">
-          <i class="fa-brands fa-html5"></i>
-          <h4>HTML</h4>
-          <p>Semantic, clean structure</p>
-        </div>
-        <div class="skill">
-          <i class="fa-brands fa-css3-alt"></i>
-          <h4>CSS</h4>
-          <p>Modern layouts & animations</p>
-        </div>
-        <div class="skill">
-          <i class="fa-brands fa-js"></i>
-          <h4>JavaScript</h4>
-          <p>Dynamic interactions</p>
-        </div>
-        <div class="skill">
-          <i class="fa-brands fa-node-js"></i>
-          <h4>Node.js</h4>
-          <p>REST APIs & realtime</p>
-        </div>
-        <div class="skill">
-          <i class="fa-solid fa-fire"></i>
-          <h4>Firebase</h4>
-          <p>Auth, DB, hosting</p>
-        </div>
-        <div class="skill">
-          <i class="fa-solid fa-database"></i>
-          <h4>MySQL</h4>
-          <p>Structured database</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>My Work</h2>
-        <p>Projects I built previously (including with ChatGPT support).</p>
-      </div>
-
-      <div class="projects-grid">
-       
-        <article class="project-card">
-          <div class="project-top">
-            <span class="tag">E-Commerce</span>
-            <span class="tag ghost">Google Sheets + Apps Script</span>
-          </div>
-          <h3>e-Kiraana Store</h3>
-          <p>
-            Grocery & local store website with categories, products listing, search, and improved layout.
-            Integrated sheet-based database using Apps Script backend.
-          </p>
-          <div class="project-actions">
-            <a class="btn small" href="#" target="_blank"><i class="fa-solid fa-link"></i> Live</a>
-            <a class="btn small ghost" href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
-        </article>
-
-       
-        <article class="project-card">
-          <div class="project-top">
-            <span class="tag">Delivery</span>
-            <span class="tag ghost">Login system</span>
-          </div>
-          <h3>Pure Drop Water Delivery</h3>
-          <p>
-            Drinking water delivery platform with customer + delivery boy registration & login,
-            order management, and location-based delivery flow.
-          </p>
-          <div class="project-actions">
-            <a class="btn small" href="#" target="_blank"><i class="fa-solid fa-link"></i> Live</a>
-            <a class="btn small ghost" href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
-        </article>
-
-        
-        <article class="project-card">
-          <div class="project-top">
-            <span class="tag">Game</span>
-            <span class="tag ghost">Socket.io</span>
-          </div>
-          <h3>3D Car Racing Game</h3>
-          <p>
-            Multiplayer-ready racing game structure using Node.js + Socket.io,
-            public folder setup, and smooth UI improvements.
-          </p>
-          <div class="project-actions">
-            <a class="btn small" href="#" target="_blank"><i class="fa-solid fa-link"></i> Live</a>
-            <a class="btn small ghost" href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
-        </article>
-
-        
-        <article class="project-card">
-          <div class="project-top">
-            <span class="tag">Hackathon</span>
-            <span class="tag ghost">Dashboard</span>
-          </div>
-          <h3>Aadhaar Enrolment Trends</h3>
-          <p>
-            Hackathon project to analyze Aadhaar enrolment & updates for societal trends.
-            Backend + frontend planning for data visualization dashboard.
-          </p>
-          <div class="project-actions">
-            <a class="btn small" href="#" target="_blank"><i class="fa-solid fa-link"></i> Live</a>
-            <a class="btn small ghost" href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Let’s build something awesome together.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="card glass">
-          <h3>Let’s talk</h3>
-          <p class="muted">
-            You can message me for website development, portfolio, apps, ecommerce, dashboards, etc.
-          </p>
-
-          <div class="contact-list">
-            <div><i class="fa-solid fa-envelope"></i> <span id="emailText">darshan@example.com</span></div>
-            <div><i class="fa-solid fa-phone"></i> +91 XXXXX XXXXX</div>
-            <div><i class="fa-solid fa-location-dot"></i> Karnataka, India</div>
-          </div>
-
-          <button class="btn small" id="copyEmail">
-            <i class="fa-regular fa-copy"></i> Copy Email
-          </button>
-        </div>
-
-        <form class="card glass contact-form" onsubmit="return sendMessage(event)">
-          <h3>Send Message</h3>
-          <input type="text" id="name" placeholder="Your name" required />
-          <input type="email" id="email" placeholder="Your email" required />
-          <textarea id="msg" placeholder="Your message..." rows="5" required></textarea>
-          <button type="submit" class="btn">
-            <i class="fa-solid fa-paper-plane"></i> Send
-          </button>
-          <p class="muted tiny">
-            *This form opens your mail app. Later we can connect this to backend.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container foot-wrap">
-      <p>© <span id="year"></span> Darshan Mang • Made with ❤️</p>
-      <a href="#home" class="backtop"><i class="fa-solid fa-arrow-up"></i></a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darshan | 3D Portfolio</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darshan Mang — Full Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ===== ROOT & RESET ===== */
+    :root {
+      --bg: #05070f;
+      --surface: rgba(255,255,255,.042);
+      --border: rgba(255,255,255,.09);
+      --text: #e8eeff;
+      --muted: rgba(200,210,255,.55);
+      --a: #7b6dff;
+      --b: #00e5ff;
+      --c: #ff5fa0;
+      --shadow-lg: 0 32px 80px rgba(0,0,0,.6);
+      --r: 20px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{
+      font-family:'DM Sans',system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      cursor:none;
+    }
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+    ul{list-style:none;}
+    .container{width:min(1140px,92%);margin:0 auto;}
+
+    /* ===== CUSTOM CURSOR ===== */
+    #cursor{
+      position:fixed;width:12px;height:12px;border-radius:50%;
+      background:var(--b);pointer-events:none;z-index:9999;
+      transform:translate(-50%,-50%);
+      transition:transform .08s,background .2s;
+      mix-blend-mode:screen;
+    }
+    #cursor-ring{
+      position:fixed;width:38px;height:38px;border-radius:50%;
+      border:1.5px solid rgba(0,229,255,.45);pointer-events:none;z-index:9998;
+      transform:translate(-50%,-50%);
+      transition:transform .18s ease,width .2s,height .2s,opacity .2s;
+    }
+    body:hover #cursor{opacity:1;}
+
+    /* ===== CANVAS ===== */
+    #particles{
+      position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.55;
+    }
+
+    /* ===== BG BLOBS ===== */
+    .blobs{
+      position:fixed;inset:0;z-index:-5;overflow:hidden;pointer-events:none;
+    }
+    .blob{
+      position:absolute;border-radius:50%;filter:blur(80px);opacity:.28;
+      animation:blobFloat 14s ease-in-out infinite;
+    }
+    .b1{width:700px;height:700px;background:radial-gradient(circle,rgba(123,109,255,.8),transparent 65%);top:-200px;left:-200px;}
+    .b2{width:600px;height:600px;background:radial-gradient(circle,rgba(0,229,255,.7),transparent 65%);bottom:-200px;right:-150px;animation-duration:18s;}
+    .b3{width:500px;height:500px;background:radial-gradient(circle,rgba(255,95,160,.65),transparent 65%);top:35%;left:40%;animation-duration:22s;}
+    @keyframes blobFloat{
+      0%,100%{transform:translate(0,0) scale(1);}
+      50%{transform:translate(40px,-60px) scale(1.08);}
+    }
+
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky;top:0;z-index:100;
+      padding:0;
+      background:rgba(5,7,15,.72);
+      backdrop-filter:blur(20px) saturate(180%);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      height:64px;
+    }
+    .logo{
+      font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;
+      display:flex;align-items:center;gap:10px;letter-spacing:-.3px;
+    }
+    .logo-dot{
+      width:9px;height:9px;border-radius:50%;
+      background:linear-gradient(135deg,var(--a),var(--b));
+      box-shadow:0 0 16px rgba(0,229,255,.8);
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse{0%,100%{box-shadow:0 0 16px rgba(0,229,255,.8);}50%{box-shadow:0 0 28px rgba(0,229,255,1),0 0 50px rgba(123,109,255,.5);}}
+    .logo .muted{color:var(--muted);}
+    .menu{display:flex;gap:28px;align-items:center;}
+    .menu a{
+      font-weight:500;font-size:.9rem;color:var(--muted);
+      transition:color .2s;letter-spacing:.2px;
+    }
+    .menu a:hover{color:var(--text);}
+    .menu .hire{
+      padding:8px 18px;border-radius:999px;
+      background:linear-gradient(135deg,var(--a),var(--b));
+      color:#fff;font-weight:600;font-size:.85rem;
+      box-shadow:0 0 18px rgba(123,109,255,.45);
+      transition:box-shadow .2s,transform .2s;
+    }
+    .menu .hire:hover{box-shadow:0 0 28px rgba(0,229,255,.6);transform:translateY(-1px);}
+    .hamburger{display:none;border:0;background:none;color:var(--text);font-size:1.2rem;cursor:none;}
+
+    /* ===== HERO ===== */
+    .hero{
+      min-height:100vh;display:grid;align-items:center;
+      padding:80px 0 60px;position:relative;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;
+    }
+    /* Left */
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 14px;border-radius:999px;
+      background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.18);
+      font-size:.78rem;font-weight:600;color:var(--b);
+      margin-bottom:22px;letter-spacing:.5px;text-transform:uppercase;
+    }
+    .hero-eyebrow span{
+      width:7px;height:7px;border-radius:50%;
+      background:var(--b);animation:pulse 1.8s ease-in-out infinite;
+    }
+    .hero h1{
+      font-family:'Syne',sans-serif;
+      font-size:clamp(2.4rem,5vw,3.6rem);
+      font-weight:800;line-height:1.05;letter-spacing:-1.5px;
+      margin-bottom:20px;
+    }
+    .grad{
+      background:linear-gradient(135deg,var(--a) 0%,var(--b) 50%,var(--c) 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      background-size:200% 200%;animation:gradShift 4s ease infinite;
+    }
+    @keyframes gradShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+    .hero-lead{
+      font-size:1.05rem;color:var(--muted);line-height:1.75;
+      max-width:52ch;margin-bottom:32px;font-weight:400;
+    }
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:13px 24px;border-radius:14px;font-weight:600;font-size:.95rem;
+      background:linear-gradient(135deg,var(--a),var(--b));
+      box-shadow:0 8px 30px rgba(123,109,255,.4);
+      transition:transform .2s,box-shadow .2s;cursor:none;
+      border:0;
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,229,255,.45);}
+    .btn-ghost{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:13px 24px;border-radius:14px;font-weight:600;font-size:.95rem;
+      background:var(--surface);border:1px solid var(--border);
+      transition:transform .2s,border-color .2s;cursor:none;
+    }
+    .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(0,229,255,.4);}
+    .socials{display:flex;gap:10px;}
+    .socials a{
+      width:42px;height:42px;border-radius:12px;
+      display:grid;place-items:center;
+      background:var(--surface);border:1px solid var(--border);
+      font-size:1rem;transition:transform .2s,border-color .2s,color .2s;cursor:none;
+    }
+    .socials a:hover{transform:translateY(-3px);border-color:rgba(0,229,255,.4);color:var(--b);}
+
+    /* Right card */
+    .hero-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:28px;padding:24px;
+      box-shadow:var(--shadow-lg);
+      position:relative;overflow:hidden;
+      transform-style:preserve-3d;
+      transition:transform .12s ease;
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:-1px;border-radius:28px;
+      background:linear-gradient(135deg,rgba(123,109,255,.2),rgba(0,229,255,.1),transparent 60%);
+      z-index:-1;
+    }
+    .glow-orb{
+      position:absolute;width:300px;height:300px;border-radius:50%;
+      background:radial-gradient(circle,rgba(0,229,255,.18),transparent 65%);
+      top:-100px;right:-100px;pointer-events:none;filter:blur(20px);
+    }
+
+    .profile-row{display:flex;gap:16px;align-items:center;}
+    .profile-img{
+      width:90px;height:90px;border-radius:20px;overflow:hidden;flex-shrink:0;
+      border:2px solid rgba(0,229,255,.35);
+      box-shadow:0 0 24px rgba(0,229,255,.3),0 0 50px rgba(123,109,255,.2);
+      transform-style:preserve-3d;transition:transform .15s ease;
+      position:relative;
+    }
+    .profile-img::after{
+      content:"";position:absolute;inset:0;border-radius:18px;
+      background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.3),transparent 50%);
+      pointer-events:none;z-index:1;
+    }
+    .profile-img img{width:100%;height:100%;object-fit:cover;}
+    .profile-img .fallback-letter{
+      width:100%;height:100%;display:grid;place-items:center;
+      font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;
+      background:linear-gradient(135deg,rgba(123,109,255,.3),rgba(0,229,255,.2));
+      color:var(--b);
+    }
+    .profile-name{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;}
+    .profile-role{color:var(--muted);font-size:.82rem;margin-top:3px;font-weight:500;}
+    .profile-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px;}
+    .chip{
+      padding:5px 10px;border-radius:999px;font-size:.72rem;font-weight:600;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+    }
+    .chip.accent{background:rgba(0,229,255,.09);border-color:rgba(0,229,255,.2);color:var(--b);}
+
+    .info-rows{margin-top:18px;display:grid;gap:10px;}
+    .info-row{
+      padding:12px 14px;border-radius:14px;
+      background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.07);
+    }
+    .info-label{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;}
+    .info-val{font-size:.88rem;font-weight:500;margin-top:4px;color:var(--text);}
+
+    .stats-row{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;
+    }
+    .stat-box{
+      padding:12px;border-radius:14px;text-align:center;
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+    }
+    .stat-box .num{
+      font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;
+      background:linear-gradient(135deg,var(--a),var(--b));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .stat-box .lbl{font-size:.68rem;color:var(--muted);margin-top:3px;font-weight:600;}
+
+    /* Floating badges */
+    .floating-row{
+      display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px;
+    }
+    .fbadge{
+      padding:9px 16px;border-radius:999px;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);
+      font-size:.8rem;font-weight:600;color:var(--muted);
+      display:inline-flex;align-items:center;gap:8px;
+      animation:floatUp 3s ease-in-out infinite;
+    }
+    .fbadge:nth-child(2){animation-delay:.4s;}
+    .fbadge:nth-child(3){animation-delay:.8s;}
+    .fbadge i{color:var(--b);}
+    @keyframes floatUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+
+    /* ===== SECTIONS ===== */
+    .section{padding:90px 0;}
+    .sec-header{margin-bottom:48px;}
+    .sec-tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.72rem;font-weight:700;color:var(--b);
+      text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;
+    }
+    .sec-tag::before{content:"";width:24px;height:1px;background:var(--b);}
+    .sec-header h2{
+      font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);
+      font-weight:800;letter-spacing:-1px;line-height:1.1;
+    }
+    .sec-header p{color:var(--muted);margin-top:10px;font-size:1rem;max-width:50ch;}
+    .sep{width:56px;height:3px;background:linear-gradient(90deg,var(--a),var(--b));border-radius:999px;margin-top:14px;}
+
+    /* ===== ABOUT ===== */
+    .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .card{
+      border-radius:22px;padding:22px;
+      background:var(--surface);border:1px solid var(--border);
+      box-shadow:var(--shadow-lg);transition:transform .25s,border-color .25s;
+      position:relative;overflow:hidden;
+    }
+    .card::before{
+      content:"";position:absolute;inset:0;border-radius:22px;
+      background:linear-gradient(135deg,rgba(123,109,255,.06) 0%,transparent 60%);
+      pointer-events:none;
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(0,229,255,.2);}
+    .card h3{
+      font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:12px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .card h3 i{color:var(--b);font-size:.95rem;}
+    .card p{color:var(--muted);line-height:1.7;font-size:.92rem;}
+    .ticks{display:grid;gap:9px;margin-top:6px;}
+    .ticks li{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.88rem;font-weight:500;}
+    .ticks li i{color:var(--b);font-size:.75rem;flex-shrink:0;}
+    .startup-link{
+      color:var(--text);font-weight:700;
+      border-bottom:1px dashed rgba(255,255,255,.25);
+      transition:color .2s;
+    }
+    .startup-link:hover{color:var(--b);}
+
+    /* ===== SKILLS ===== */
+    .skills-wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+    .skill-box{
+      padding:20px 14px;border-radius:18px;text-align:center;
+      background:var(--surface);border:1px solid var(--border);
+      transition:transform .25s,border-color .25s,box-shadow .25s;
+      cursor:default;
+    }
+    .skill-box:hover{
+      transform:translateY(-6px) rotateX(8deg);
+      border-color:rgba(0,229,255,.3);
+      box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 20px rgba(0,229,255,.1);
+    }
+    .skill-box i{font-size:2rem;margin-bottom:10px;display:block;}
+    .skill-box h4{font-size:.82rem;font-weight:700;font-family:'Syne',sans-serif;}
+    .skill-box p{font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.4;}
+    .s-html i{color:#e34c26;}
+    .s-css i{color:#264de4;}
+    .s-js i{color:#f7df1e;}
+    .s-node i{color:#68a063;}
+    .s-fire i{color:#ffca28;}
+    .s-sql i{color:#4479a1;}
+
+    /* ===== PROJECTS ===== */
+    .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    .proj-card{
+      border-radius:24px;padding:24px;
+      background:var(--surface);border:1px solid var(--border);
+      box-shadow:var(--shadow-lg);
+      position:relative;overflow:hidden;
+      transform-style:preserve-3d;
+      transition:transform .2s,box-shadow .2s;cursor:default;
+    }
+    .proj-card::before{
+      content:"";position:absolute;inset:-60px;
+      background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.12) 45%,rgba(255,255,255,.04) 55%,transparent 75%);
+      transform:translateX(-140%) rotate(15deg);transition:.65s ease;
+    }
+    .proj-card:hover::before{transform:translateX(160%) rotate(15deg);}
+    .proj-card:hover{
+      transform:rotateX(8deg) rotateY(-6deg) translateY(-8px);
+      box-shadow:0 50px 120px rgba(0,0,0,.7),0 0 30px rgba(0,229,255,.1);
+    }
+    .proj-accent{
+      position:absolute;top:0;right:0;width:180px;height:180px;
+      background:radial-gradient(circle,rgba(123,109,255,.12),transparent 65%);
+      pointer-events:none;
+    }
+    .proj-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .tag{
+      padding:5px 11px;border-radius:999px;font-size:.7rem;font-weight:700;
+      background:rgba(123,109,255,.14);border:1px solid rgba(123,109,255,.25);
+      color:rgba(180,170,255,.9);
+    }
+    .tag.soft{
+      background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10);
+      color:var(--muted);
+    }
+    .proj-card h3{
+      font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;
+      margin-bottom:8px;
+    }
+    .proj-card p{color:var(--muted);font-size:.88rem;line-height:1.65;}
+    .proj-footer{
+      margin-top:16px;display:flex;gap:10px;align-items:center;
+    }
+    .proj-dot{
+      width:8px;height:8px;border-radius:50%;
+      background:linear-gradient(135deg,var(--a),var(--b));
+      box-shadow:0 0 8px rgba(0,229,255,.5);
+    }
+    .proj-type{font-size:.75rem;color:var(--muted);font-weight:600;}
+
+    /* ===== CONTACT ===== */
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .contact-info h3{
+      font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:6px;
+    }
+    .contact-info p{color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:20px;}
+    .clist{display:grid;gap:12px;margin-bottom:22px;}
+    .clist-item{
+      display:flex;align-items:center;gap:14px;padding:12px 16px;
+      border-radius:14px;background:var(--surface);border:1px solid var(--border);
+    }
+    .clist-icon{
+      width:36px;height:36px;border-radius:10px;
+      background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.2);
+      display:grid;place-items:center;color:var(--b);font-size:.85rem;flex-shrink:0;
+    }
+    .clist-text .label{font-size:.7rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+    .clist-text .val{font-size:.88rem;font-weight:600;margin-top:2px;}
+    .copy-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 18px;border-radius:12px;border:1px solid var(--border);
+      background:var(--surface);color:var(--text);font-size:.82rem;font-weight:600;
+      cursor:none;transition:border-color .2s,color .2s;
+    }
+    .copy-btn:hover{border-color:rgba(0,229,255,.4);color:var(--b);}
+    .contact-form .card{padding:26px;}
+    .contact-form h3{
+      font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:16px;
+    }
+    .form-group{margin-bottom:13px;}
+    .form-group input,.form-group textarea{
+      width:100%;padding:12px 16px;border-radius:14px;
+      background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.1);
+      color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;
+      outline:none;transition:border-color .2s;resize:none;
+    }
+    .form-group input:focus,.form-group textarea:focus{border-color:rgba(0,229,255,.4);}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(200,210,255,.3);}
+    .form-hint{font-size:.72rem;color:var(--muted);margin-top:8px;}
+
+    /* ===== FOOTER ===== */
+    .footer{
+      padding:28px 0;border-top:1px solid rgba(255,255,255,.07);
+      background:rgba(0,0,0,.3);
+    }
+    .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+    .foot-inner p{font-size:.82rem;color:var(--muted);}
+    .back-top{
+      width:42px;height:42px;border-radius:12px;
+      display:grid;place-items:center;
+      background:var(--surface);border:1px solid var(--border);
+      transition:transform .2s,border-color .2s;cursor:none;
+    }
+    .back-top:hover{transform:translateY(-3px);border-color:rgba(0,229,255,.35);}
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:none;}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1000px){
+      .hero-grid{grid-template-columns:1fr;}
+      .hero-card{max-width:480px;margin:0 auto;}
+      .about-grid{grid-template-columns:1fr 1fr;}
+      .skills-wrap{grid-template-columns:repeat(3,1fr);}
+      .proj-grid{grid-template-columns:1fr;}
+      .contact-wrap{grid-template-columns:1fr;}
+    }
+    @media(max-width:680px){
+      .about-grid{grid-template-columns:1fr;}
+      .skills-wrap{grid-template-columns:repeat(2,1fr);}
+      .stats-row{grid-template-columns:repeat(3,1fr);}
+      .menu{
+        position:fixed;inset:64px 14px auto 14px;
+        padding:20px;border-radius:22px;
+        background:rgba(8,10,20,.95);backdrop-filter:blur(20px);
+        border:1px solid rgba(255,255,255,.12);
+        display:none;flex-direction:column;gap:16px;
+      }
+      .menu.open{display:flex;}
+      .hamburger{display:block;}
+      .menu .hire{width:fit-content;}
+      h1{font-size:2rem!important;}
+    }
+  </style>
 </head>
-
 <body>
-    <!-- 3D Animated Background Blobs -->
-<div class="bg-blobs">
-  <span class="blob b1"></span>
-  <span class="blob b2"></span>
-  <span class="blob b3"></span>
-</div>
 
-<!-- Mouse Particles Canvas -->
+<!-- Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Canvas -->
 <canvas id="particles"></canvas>
 
-
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-wrap">
-      <a class="logo" href="#home">
-        <span class="logo-dot"></span> Darshan<span class="muted">.dev</span>
-      </a>
-
-      <nav class="menu" id="menu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Work</a>
-        <a href="#contact">Contact</a>
-        <a class="btn small" href="#contact">Hire Me</a>
-      </nav>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-
-      <div class="hero-text">
-    <div class="badge">
-  <i class="fa-solid fa-sparkles"></i>
-  Full Stack Developer •
-  <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank">
-    ShadowQuant Dynamics <i class="fa-solid fa-arrow-up-right-from-square"></i>
-  </a>
+<!-- Blobs -->
+<div class="blobs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
 </div>
 
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">
+      <div class="logo-dot"></div>
+      Darshan<span class="muted">.dev</span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Work</a>
+      <a href="#contact">Contact</a>
+      <a class="hire" href="#contact">Hire Me</a>
+    </nav>
+    <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
 
-
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span></span>
+          Available for projects &nbsp;•&nbsp; 2026
+        </div>
         <h1>
-          Hi, I’m <span class="gradient">Darshan</span> 👋 <br />
-          I build <span class="underline">Modern 3D Websites</span>.
+          Hi, I'm <span class="grad">Darshan</span> 👋<br>
+          I build modern<br>Web Apps that feel<br><em style="font-style:normal;text-decoration:underline;text-decoration-color:rgba(0,229,255,.35);text-underline-offset:6px;">premium.</em>
         </h1>
-
-        <p class="lead">
-          I create premium websites with clean design, smooth animations, responsive layout,
-          and strong backend systems like Firebase, MySQL and Node.js.
+        <p class="hero-lead">
+          Full Stack Developer focused on clean UI, strong backend logic, responsive design and buttery-smooth user experience. I love shipping real products — delivery systems, e-commerce, dashboards, hackathon apps.
         </p>
-
-        <div class="hero-actions">
-          <a class="btn" href="#projects">
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#projects">
             <i class="fa-solid fa-briefcase"></i> View Projects
           </a>
-          <a class="btn ghost" href="#contact">
+          <a class="btn-ghost" href="#contact">
             <i class="fa-solid fa-paper-plane"></i> Contact Me
           </a>
-          <a class="btn ghost" href="https://shadowquantdynamics.com/" target="_blank">
-  <i class="fa-solid fa-building"></i> ShadowQuant Dynamics
-</a>
-
         </div>
-
-        <div class="social">
+        <div class="socials">
           <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
           <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
-
-        <div class="stats">
-          <div class="stat tilt">
-            <h3>10+</h3>
-            <p>Projects Built</p>
-          </div>
-          <div class="stat tilt">
-            <h3>Fast</h3>
-            <p>Clean Websites</p>
-          </div>
-          <div class="stat tilt">
-            <h3>3D UI</h3>
-            <p>Modern Animations</p>
-          </div>
-        </div>
       </div>
 
-      <!-- 3D CARD -->
-      <div class="hero-card tilt big-tilt">
-        <div class="profile">
-          <div class="profile-pic glow-3d">
+      <!-- Right card -->
+      <div class="hero-card" id="heroCard">
+        <div class="glow-orb"></div>
 
-            <img src="profile.png" alt="Darshan profile" onerror="this.style.display='none'; this.parentElement.classList.add('fallback');"/>
-            <div class="fallback-text">
-              <span>D</span>
-            </div>
+        <div class="profile-row">
+          <div class="profile-img" id="profileImg">
+            <img src="profile.png" alt="Darshan Mang"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="fallback-letter" style="display:none;">D</div>
           </div>
-
-          <div class="profile-info">
-            <h2>Darshan Mang</h2>
-            <p>Full Stack Developer • Employee @ ShadowQuant Dynamics</p>
-
-
-            <div class="chips">
-              <span><i class="fa-solid fa-code"></i> Web Dev</span>
-              <span><i class="fa-solid fa-cube"></i> 3D UI</span>
-              <span><i class="fa-solid fa-bolt"></i> Speed</span>
+          <div>
+            <div class="profile-name">Darshan Mang</div>
+            <div class="profile-role">Full Stack Developer • ShadowQuant Dynamics</div>
+            <div class="profile-chips">
+              <span class="chip accent"><i class="fa-solid fa-code"></i> Web Dev</span>
+              <span class="chip"><i class="fa-solid fa-bolt"></i> Fast Learner</span>
+              <span class="chip"><i class="fa-solid fa-cube"></i> 3D UI</span>
             </div>
           </div>
         </div>
 
-        <div class="quick">
-          <div class="quick-item tilt">
-            <p class="q-title">Tech Stack</p>
-            <p class="q-desc">HTML • CSS • JS • Node.js • Firebase • MySQL</p>
+        <div class="info-rows">
+          <div class="info-row">
+            <div class="info-label">Tech Stack</div>
+            <div class="info-val">HTML · CSS · JS · Node.js · Firebase · MySQL</div>
           </div>
-
-          <div class="quick-item tilt">
-            <p class="q-title">Email</p>
-            <p class="q-desc">darshan5462@gmail.com</p>
+          <div class="info-row">
+            <div class="info-label">Best Work</div>
+            <div class="info-val">E-Commerce · Delivery App · Hackathon Dashboard</div>
           </div>
-
-          <div class="quick-item tilt">
-            <p class="q-title">Phone</p>
-            <p class="q-desc">+91 9164406348</p>
+          <div class="info-row">
+            <div class="info-label">Goal</div>
+            <div class="info-val">Build premium websites that clients love.</div>
           </div>
         </div>
 
-        <div class="glow"></div>
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="num">10+</div>
+            <div class="lbl">Projects</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">2026</div>
+            <div class="lbl">Focused</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">FS</div>
+            <div class="lbl">Full Stack</div>
+          </div>
+        </div>
       </div>
-
     </div>
 
-    <div class="floating">
-      <span class="float-card tilt"><i class="fa-solid fa-shield"></i> Secure Login</span>
-      <span class="float-card tilt"><i class="fa-solid fa-mobile-screen"></i> Mobile First</span>
-      <span class="float-card tilt"><i class="fa-solid fa-rocket"></i> Premium UI</span>
+    <div class="floating-row">
+      <span class="fbadge"><i class="fa-solid fa-shield"></i> Secure Login</span>
+      <span class="fbadge"><i class="fa-solid fa-mobile-screen"></i> Mobile First</span>
+      <span class="fbadge"><i class="fa-solid fa-rocket"></i> High Performance</span>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About Me</h2>
-        <p>Focused on building premium web systems that look modern and work smoothly.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="card glass tilt">
-          <h3>Who am I?</h3>
-          <p>
-            I’m Darshan, a full stack web developer.
-            I build modern websites with strong UI and backend logic.
-          </p>
-          <p class="muted">I focus on making sites clean, fast, and client-ready.</p>
-        </div>
-
-        <div class="card glass tilt">
-          <h3>What I do best</h3>
-          <ul class="ticks">
-            <li><i class="fa-solid fa-check"></i> Professional UI + responsive layout</li>
-            <li><i class="fa-solid fa-check"></i> Firebase login + database</li>
-            <li><i class="fa-solid fa-check"></i> Node.js backend APIs</li>
-            <li><i class="fa-solid fa-check"></i> MySQL structured DB</li>
-            <li><i class="fa-solid fa-check"></i> Smooth 3D hover effects</li>
-          </ul>
-        </div>
-        <div class="card glass tilt">
-  <h3>Startup Experience</h3>
-  <p>
-  I’m a Developer / Worker at
-  <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank">
-    <b class="gradient">ShadowQuant Dynamics</b>
-    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-  </a>.
-  I work on building modern web products, dashboards and backend services.
-</p>
-
-
-  <div class="chips" style="margin-top:12px;">
-    <span><i class="fa-solid fa-building"></i> ShadowQuant Dynamics</span>
-    <span><i class="fa-solid fa-handshake"></i> Partner</span>
-    <span><i class="fa-solid fa-code"></i> Developer</span>
   </div>
-</div>
+</section>
 
-      </div>
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-tag">About</div>
+      <h2>Who I Am &amp; What I Build</h2>
+      <p>Focused on building premium web systems that look modern and work perfectly.</p>
+      <div class="sep"></div>
     </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>My Work</h2>
-        <p>Projects I created earlier (with ChatGPT support).</p>
+    <div class="about-grid">
+      <div class="card reveal">
+        <h3><i class="fa-solid fa-user"></i> Who am I?</h3>
+        <p>I'm Darshan — a full stack web developer who loves building modern websites with strong UI and clean backend logic. I focus on making sites fast, client-ready, and genuinely enjoyable to use.</p>
+        <p style="margin-top:10px;" class="muted" style="font-size:.85rem;">Based in Karnataka, India. Open to remote projects.</p>
       </div>
-
-      <div class="projects-grid">
-        <article class="project-card tilt">
-          <div class="project-top">
-            <span class="tag">E-Commerce</span>
-            <span class="tag ghost">Sheets Backend</span>
-          </div>
-          <h3>e-Kiraana Store</h3>
-          <p>Grocery store site with categories, product listing, search & improved UI.</p>
-        </article>
-
-        <article class="project-card tilt">
-          <div class="project-top">
-            <span class="tag">Delivery</span>
-            <span class="tag ghost">Login system</span>
-          </div>
-          <h3>Pure Drop Water Delivery</h3>
-          <p>Customer + delivery boy system with orders, location and delivery flow.</p>
-        </article>
-
-        <article class="project-card tilt">
-          <div class="project-top">
-            <span class="tag">Game</span>
-            <span class="tag ghost">Socket.io</span>
-          </div>
-          <h3>3D Car Racing Game</h3>
-          <p>Node.js + Socket.io multiplayer-ready racing game structure.</p>
-        </article>
-
-        <article class="project-card tilt">
-          <div class="project-top">
-            <span class="tag">Hackathon</span>
-            <span class="tag ghost">Dashboard</span>
-          </div>
-          <h3>Aadhaar Enrolment Trends</h3>
-          <p>Hackathon dashboard UI plan for enrolment & societal trend analysis.</p>
-        </article>
-        <article class="project-card tilt">
-  <div class="project-top">
-    <span class="tag">Startup</span>
-    <span class="tag ghost">ShadowQuant Dynamics</span>
-  </div>
-  <h3>ShadowQuant Dynamics – Startup Work</h3>
-  <p>
-    Building modern web systems, dashboards and UI components as a developer/partner.
-    Focus on performance, clean UI and scalable backend.
-  </p>
-</article>
-
+      <div class="card reveal">
+        <h3><i class="fa-solid fa-list-check"></i> What I do best</h3>
+        <ul class="ticks">
+          <li><i class="fa-solid fa-check-circle"></i> Professional UI + responsive layout</li>
+          <li><i class="fa-solid fa-check-circle"></i> Firebase login + realtime database</li>
+          <li><i class="fa-solid fa-check-circle"></i> Node.js REST backend APIs</li>
+          <li><i class="fa-solid fa-check-circle"></i> MySQL structured databases</li>
+          <li><i class="fa-solid fa-check-circle"></i> Smooth 3D hover &amp; animations</li>
+        </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Ready to work with you.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="card glass tilt">
-          <h3>Let’s Connect</h3>
-          <div class="contact-list">
-            <div><i class="fa-solid fa-envelope"></i> <span id="emailText">darshan5462@gmail.com</span></div>
-            <div><i class="fa-solid fa-phone"></i> +91 9164406348</div>
-            <div><i class="fa-solid fa-location-dot"></i> Karnataka, India</div>
-          </div>
-
-          <button class="btn small" id="copyEmail">
-            <i class="fa-regular fa-copy"></i> Copy Email
-          </button>
+      <div class="card reveal">
+        <h3><i class="fa-solid fa-building"></i> Startup Experience</h3>
+        <p>Developer at <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank"><strong>ShadowQuant Dynamics</strong> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7rem;"></i></a>. Building modern web products, dashboards and backend services.</p>
+        <div class="profile-chips" style="margin-top:14px;">
+          <span class="chip"><i class="fa-solid fa-handshake"></i> Partner</span>
+          <span class="chip accent"><i class="fa-solid fa-code"></i> Developer</span>
         </div>
-
-        <form class="card glass contact-form tilt" onsubmit="return sendMessage(event)">
-          <h3>Send Message</h3>
-          <input type="text" id="name" placeholder="Your name" required />
-          <input type="email" id="email" placeholder="Your email" required />
-          <textarea id="msg" placeholder="Your message..." rows="5" required></textarea>
-          <button type="submit" class="btn">
-            <i class="fa-solid fa-paper-plane"></i> Send
-          </button>
-          <p class="muted tiny">*Opens Gmail / Mail app.</p>
-        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-  <div class="container foot-wrap">
+<!-- ===== SKILLS ===== -->
+<section class="section" id="skills" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-tag">Skills</div>
+      <h2>Tools &amp; Technologies</h2>
+      <p>My stack for building beautiful and scalable apps.</p>
+      <div class="sep"></div>
+    </div>
+    <div class="skills-wrap">
+      <div class="skill-box s-html reveal">
+        <i class="fa-brands fa-html5"></i>
+        <h4>HTML</h4>
+        <p>Semantic structure</p>
+      </div>
+      <div class="skill-box s-css reveal">
+        <i class="fa-brands fa-css3-alt"></i>
+        <h4>CSS</h4>
+        <p>Layouts &amp; animation</p>
+      </div>
+      <div class="skill-box s-js reveal">
+        <i class="fa-brands fa-js"></i>
+        <h4>JavaScript</h4>
+        <p>Dynamic interactions</p>
+      </div>
+      <div class="skill-box s-node reveal">
+        <i class="fa-brands fa-node-js"></i>
+        <h4>Node.js</h4>
+        <p>REST APIs &amp; realtime</p>
+      </div>
+      <div class="skill-box s-fire reveal">
+        <i class="fa-solid fa-fire"></i>
+        <h4>Firebase</h4>
+        <p>Auth, DB, hosting</p>
+      </div>
+      <div class="skill-box s-sql reveal">
+        <i class="fa-solid fa-database"></i>
+        <h4>MySQL</h4>
+        <p>Structured database</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section" id="projects" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-tag">Work</div>
+      <h2>Projects I've Built</h2>
+      <p>Real-world apps built with clean code and premium UI.</p>
+      <div class="sep"></div>
+    </div>
+    <div class="proj-grid">
+      <article class="proj-card reveal">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">E-Commerce</span>
+          <span class="tag soft">Google Sheets + Apps Script</span>
+        </div>
+        <h3>e-Kiraana Store</h3>
+        <p>Grocery & local store website with categories, product listing, search and improved UI. Sheet-based database using Apps Script backend.</p>
+        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Web App</span></div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">Delivery</span>
+          <span class="tag soft">Login System</span>
+        </div>
+        <h3>Pure Drop Water Delivery</h3>
+        <p>Customer + delivery boy system with orders, location and full delivery flow. Firebase auth + realtime tracking.</p>
+        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Full Stack App</span></div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">Game</span>
+          <span class="tag soft">Socket.io</span>
+        </div>
+        <h3>3D Car Racing Game</h3>
+        <p>Node.js + Socket.io multiplayer-ready 3D racing game structure with real-time gameplay mechanics.</p>
+        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Browser Game</span></div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">Hackathon</span>
+          <span class="tag soft">Dashboard</span>
+        </div>
+        <h3>Aadhaar Enrolment Trends</h3>
+        <p>Hackathon dashboard UI for enrolment & societal trend analysis with data visualisation and clean reporting.</p>
+        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Analytics Dashboard</span></div>
+      </article>
+
+      <article class="proj-card reveal" style="grid-column:1/-1;">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">Startup</span>
+          <span class="tag soft">ShadowQuant Dynamics</span>
+        </div>
+        <h3>ShadowQuant Dynamics — Startup Work</h3>
+        <p>Building modern web systems, dashboards and UI components as developer/partner. Focus on performance, clean UI and scalable backend architecture.</p>
+        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Ongoing / Production</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-tag">Contact</div>
+      <h2>Let's Build Something</h2>
+      <p>Ready to work with you. Reach out and let's create something premium.</p>
+      <div class="sep"></div>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <h3>Get In Touch</h3>
+        <p>Whether you have a project, a question or just want to connect — my inbox is always open.</p>
+        <div class="clist">
+          <div class="clist-item">
+            <div class="clist-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="clist-text">
+              <div class="label">Email</div>
+              <div class="val" id="emailText">darshan5462@gmail.com</div>
+            </div>
+          </div>
+          <div class="clist-item">
+            <div class="clist-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="clist-text">
+              <div class="label">Phone</div>
+              <div class="val">+91 9164406348</div>
+            </div>
+          </div>
+          <div class="clist-item">
+            <div class="clist-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="clist-text">
+              <div class="label">Location</div>
+              <div class="val">Karnataka, India</div>
+            </div>
+          </div>
+        </div>
+        <button class="copy-btn" id="copyEmail">
+          <i class="fa-regular fa-copy"></i> Copy Email
+        </button>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="card">
+          <h3>Send a Message</h3>
+          <form onsubmit="return sendMessage(event)">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Your email" required/>
+            </div>
+            <div class="form-group">
+              <textarea id="msg" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <p class="form-hint">* Opens Gmail / Mail app on your device.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container foot-inner">
     <div>
-      <p>© <span id="year"></span> Darshan Mang • 3D Portfolio</p>
-      <p class="muted tiny">
-        Worker @
-        <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank">
-          ShadowQuant Dynamics
-        </a>
-      </p>
+      <p>© <span id="year"></span> <strong>Darshan Mang</strong> · Full Stack Developer</p>
+      <p style="margin-top:4px;">Worker @ <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank">ShadowQuant Dynamics</a></p>
     </div>
-
-    <a href="#home" class="backtop"><i class="fa-solid fa-arrow-up"></i></a>
+    <a class="back-top" href="#home" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
 </footer>
 
+<script>
+/* ===== CURSOR ===== */
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+window.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top  = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px';
+  ring.style.top  = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.proj-card,.skill-box,.card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.width = '56px'; ring.style.height = '56px';
+    ring.style.borderColor = 'rgba(0,229,255,.7)';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.width = '38px'; ring.style.height = '38px';
+    ring.style.borderColor = 'rgba(0,229,255,.45)';
+  });
+});
 
-  <script src="script.js"></script>
+/* ===== PARTICLES ===== */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W, H;
+function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+let pts = [];
+window.addEventListener('mousemove', e => {
+  for(let i=0;i<4;i++){
+    pts.push({
+      x:e.clientX, y:e.clientY,
+      vx:(Math.random()-.5)*2.5, vy:(Math.random()-.5)*2.5,
+      size:Math.random()*3+1, life:70
+    });
+  }
+});
+(function loop(){
+  ctx.clearRect(0,0,W,H);
+  for(let i=pts.length-1;i>=0;i--){
+    const p=pts[i];
+    p.x+=p.vx; p.y+=p.vy; p.life--;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fillStyle=`rgba(0,229,255,${p.life/100})`;
+    ctx.fill();
+    if(p.life<=0) pts.splice(i,1);
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* ===== NAV MOBILE ===== */
+const ham = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+ham.addEventListener('click', () => menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+/* ===== YEAR ===== */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ===== COPY EMAIL ===== */
+const cb = document.getElementById('copyEmail');
+if(cb){
+  cb.addEventListener('click', async () => {
+    const email = document.getElementById('emailText').innerText.trim();
+    try {
+      await navigator.clipboard.writeText(email);
+      cb.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      setTimeout(() => cb.innerHTML = '<i class="fa-regular fa-copy"></i> Copy Email', 1600);
+    } catch { alert('Copy manually: '+email); }
+  });
+}
+
+/* ===== CONTACT FORM ===== */
+function sendMessage(e){
+  e.preventDefault();
+  const name  = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const msg   = document.getElementById('msg').value.trim();
+  const sub = encodeURIComponent('Portfolio Contact Message');
+  const body = encodeURIComponent(`Hello Darshan,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${msg}\n`);
+  window.location.href = `mailto:darshan5462@gmail.com?subject=${sub}&body=${body}`;
+  return false;
+}
+
+/* ===== 3D TILT (hero card) ===== */
+const heroCard = document.getElementById('heroCard');
+if(heroCard){
+  heroCard.addEventListener('mousemove', e => {
+    const r = heroCard.getBoundingClientRect();
+    const rx = ((e.clientY - r.top) / r.height - .5) * -14;
+    const ry = ((e.clientX - r.left) / r.width - .5) * 14;
+    heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+  });
+  heroCard.addEventListener('mouseleave', () => heroCard.style.transform = '');
+}
+
+/* ===== PROFILE IMG 3D ===== */
+const pImg = document.getElementById('profileImg');
+if(pImg){
+  pImg.addEventListener('mousemove', e => {
+    const r = pImg.getBoundingClientRect();
+    const rx = ((e.clientY-r.top)/r.height-.5)*-16;
+    const ry = ((e.clientX-r.left)/r.width-.5)*16;
+    pImg.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) scale(1.05)`;
+  });
+  pImg.addEventListener('mouseleave', () => pImg.style.transform = '');
+}
+
+/* ===== SKILL BOXES 3D ===== */
+document.querySelectorAll('.skill-box').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const r = el.getBoundingClientRect();
+    const rx = ((e.clientY-r.top)/r.height-.5)*-12;
+    const ry = ((e.clientX-r.left)/r.width-.5)*12;
+    el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+  });
+  el.addEventListener('mouseleave', () => el.style.transform = '');
+});
+
+/* ===== SCROLL REVEAL ===== */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((en, i) => {
+    if(en.isIntersecting){
+      setTimeout(() => en.target.classList.add('show'), 80);
+      obs.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 70 + 'ms';
+  obs.observe(el);
+});
+</script>
 </body>
 </html>
