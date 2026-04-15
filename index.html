@@ -380,7 +380,16 @@
       background:linear-gradient(135deg,var(--a),var(--b));
       box-shadow:0 0 8px rgba(0,229,255,.5);
     }
-    .proj-type{font-size:.75rem;color:var(--muted);font-weight:600;}
+    .proj-link{
+      margin-left:auto;font-size:.75rem;font-weight:700;
+      color:var(--b);display:inline-flex;align-items:center;gap:5px;
+      padding:4px 10px;border-radius:999px;
+      border:1px solid rgba(0,229,255,.25);
+      background:rgba(0,229,255,.06);
+      transition:background .2s,border-color .2s;
+    }
+    .proj-link:hover{background:rgba(0,229,255,.14);border-color:rgba(0,229,255,.5);}
+    .proj-link i{font-size:.62rem;}
 
     /* ===== CONTACT ===== */
     .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
@@ -546,7 +555,7 @@
           </div>
           <div>
             <div class="profile-name">Darshan Mang</div>
-            <div class="profile-role">Full Stack Developer • ShadowQuant Dynamics</div>
+            <div class="profile-role">Full Stack Developer • Co-founder @ ShadowQuant Dynamics</div>
             <div class="profile-chips">
               <span class="chip accent"><i class="fa-solid fa-code"></i> Web Dev</span>
               <span class="chip"><i class="fa-solid fa-bolt"></i> Fast Learner</span>
@@ -572,7 +581,7 @@
 
         <div class="stats-row">
           <div class="stat-box">
-            <div class="num">10+</div>
+            <div class="num">7+</div>
             <div class="lbl">Projects</div>
           </div>
           <div class="stat-box">
@@ -622,9 +631,9 @@
       </div>
       <div class="card reveal">
         <h3><i class="fa-solid fa-building"></i> Startup Experience</h3>
-        <p>Developer at <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank"><strong>ShadowQuant Dynamics</strong> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7rem;"></i></a>. Building modern web products, dashboards and backend services.</p>
+        <p>Co-founder &amp; Developer at <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank"><strong>ShadowQuant Dynamics</strong> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7rem;"></i></a>. Building modern web products, dashboards and backend services.</p>
         <div class="profile-chips" style="margin-top:14px;">
-          <span class="chip"><i class="fa-solid fa-handshake"></i> Partner</span>
+          <span class="chip accent"><i class="fa-solid fa-handshake"></i> Co-founder</span>
           <span class="chip accent"><i class="fa-solid fa-code"></i> Developer</span>
         </div>
       </div>
@@ -686,60 +695,126 @@
       <div class="sep"></div>
     </div>
     <div class="proj-grid">
+
       <article class="proj-card reveal">
         <div class="proj-accent"></div>
         <div class="proj-tags">
-          <span class="tag">E-Commerce</span>
-          <span class="tag soft">Google Sheets + Apps Script</span>
+          <span class="tag">Community</span>
+          <span class="tag soft">Kannada · Organisation</span>
         </div>
-        <h3>e-Kiraana Store</h3>
-        <p>Grocery & local store website with categories, product listing, search and improved UI. Sheet-based database using Apps Script backend.</p>
-        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Web App</span></div>
+        <h3>Karnataka Adi Jambava Sangha</h3>
+        <p>Full website for a Karnataka-based community development organisation. Multilingual (Kannada) support, leadership pages, membership system, gallery and contact — built with clean, accessible UI.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">Organisation Website</span>
+          <a class="proj-link" href="https://karnatakaadijambava.vercel.app/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">AI Tool</span>
+          <span class="tag soft">Claude AI · Forensics</span>
+        </div>
+        <h3>Audio Forensic Detector</h3>
+        <p>AI-powered deepfake & audio tampering detector. Analyses MP3/WAV/FLAC files using Claude AI, generates spectrogram analysis, anomaly flags, chain-of-custody fingerprint and exportable forensic reports.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">AI Web App</span>
+          <a class="proj-link" href="https://audio-forensic-detector.vercel.app/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </article>
 
       <article class="proj-card reveal">
         <div class="proj-accent"></div>
         <div class="proj-tags">
           <span class="tag">Delivery</span>
-          <span class="tag soft">Login System</span>
+          <span class="tag soft">Firebase · Node.js</span>
         </div>
-        <h3>Pure Drop Water Delivery</h3>
-        <p>Customer + delivery boy system with orders, location and full delivery flow. Firebase auth + realtime tracking.</p>
-        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Full Stack App</span></div>
+        <h3>PureDrop Water Delivery</h3>
+        <p>End-to-end water delivery platform — customer registration, plan selection (₹50/can, ₹999/mo, ₹1999 office), live order status and a dedicated delivery boy flow. RO + UV safe water, COD supported.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">Full Stack App</span>
+          <a class="proj-link" href="https://puredrop-rust.vercel.app/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </article>
 
       <article class="proj-card reveal">
         <div class="proj-accent"></div>
         <div class="proj-tags">
-          <span class="tag">Game</span>
-          <span class="tag soft">Socket.io</span>
+          <span class="tag">Marketplace</span>
+          <span class="tag soft">On-Demand · Bangalore</span>
         </div>
-        <h3>3D Car Racing Game</h3>
-        <p>Node.js + Socket.io multiplayer-ready 3D racing game structure with real-time gameplay mechanics.</p>
-        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Browser Game</span></div>
+        <h3>ManPower — Workers &amp; Vehicles On Demand</h3>
+        <p>Bangalore's trusted platform to book 4,200+ verified skilled workers (electricians, masons, plumbers, drivers) and 850+ vehicles with live tracking, transparent pricing and instant booking in under 3 minutes.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">Service Marketplace</span>
+          <a class="proj-link" href="https://manpower-seven.vercel.app/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </article>
 
       <article class="proj-card reveal">
         <div class="proj-accent"></div>
         <div class="proj-tags">
-          <span class="tag">Hackathon</span>
-          <span class="tag soft">Dashboard</span>
+          <span class="tag">E-Commerce</span>
+          <span class="tag soft">Live Store · Harihar, Karnataka</span>
         </div>
-        <h3>Aadhaar Enrolment Trends</h3>
-        <p>Hackathon dashboard UI for enrolment & societal trend analysis with data visualisation and clean reporting.</p>
-        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Analytics Dashboard</span></div>
+        <h3>WAA Kids Closet</h3>
+        <p>Live kids clothing e-commerce store — "We Are Affordable." Google Sheets-synced product catalogue, cart, COD + online payment, 2-hour delivery in Harihar &amp; Davangere, PAN India shipping, 48-hour returns.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">Live E-Commerce Store</span>
+          <a class="proj-link" href="https://waakids.com/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-accent"></div>
+        <div class="proj-tags">
+          <span class="tag">AI · Voice</span>
+          <span class="tag soft">ShadowQuant · Agent</span>
+        </div>
+        <h3>SQ Voice Agent</h3>
+        <p>AI-powered voice agent built for ShadowQuant Dynamics. Handles real-time conversational AI interactions, automating workflows with voice-based intelligence for business use cases.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">AI Voice Agent</span>
+          <a class="proj-link" href="https://sq-voice-agent.vercel.app/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </article>
 
       <article class="proj-card reveal" style="grid-column:1/-1;">
         <div class="proj-accent"></div>
         <div class="proj-tags">
-          <span class="tag">Startup</span>
-          <span class="tag soft">ShadowQuant Dynamics</span>
+          <span class="tag">Education</span>
+          <span class="tag soft">Multi-Institution · Karnataka</span>
         </div>
-        <h3>ShadowQuant Dynamics — Startup Work</h3>
-        <p>Building modern web systems, dashboards and UI components as developer/partner. Focus on performance, clean UI and scalable backend architecture.</p>
-        <div class="proj-footer"><div class="proj-dot"></div><span class="proj-type">Ongoing / Production</span></div>
+        <h3>Vishwachetana Group of Institutions</h3>
+        <p>Complete multi-institution education website for Vishwachetana Group — covers Olympiad School, PU College, Residential Schools (State &amp; CBSE). Features gallery, placements, careers page, admissions and full institutional branding.</p>
+        <div class="proj-footer">
+          <div class="proj-dot"></div>
+          <span class="proj-type">Institutional Website</span>
+          <a class="proj-link" href="https://vishwachetana.vercel.app/" target="_blank">
+            Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -814,7 +889,7 @@
   <div class="container foot-inner">
     <div>
       <p>© <span id="year"></span> <strong>Darshan Mang</strong> · Full Stack Developer</p>
-      <p style="margin-top:4px;">Worker @ <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank">ShadowQuant Dynamics</a></p>
+      <p style="margin-top:4px;">Co-founder @ <a class="startup-link" href="https://shadowquantdynamics.com/" target="_blank">ShadowQuant Dynamics</a></p>
     </div>
     <a class="back-top" href="#home" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
