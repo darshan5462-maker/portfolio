@@ -12,7 +12,7 @@ export const PERSONAL = {
   companyUrl: 'https://shadowquantdynamics.com/',
   github: 'https://github.com/darshan5462-maker',
   linkedin: '#',
-  instagram: '#',
+  instagram: 'https://www.instagram.com/darshan__5462',
   available: true,
 }
 
