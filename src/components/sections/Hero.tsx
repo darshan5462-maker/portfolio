@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation'
 import { ArrowDown, GitBranch, Globe, AtSign, Mail, ExternalLink } from 'lucide-react'
 import { PERSONAL, STATS } from '../../data'
 
-const PROFILE_URL = 'https://darshan-portfolio-wheat.vercel.app/profile.png'
+const PROFILE_URL = '/profile.jpeg'
 
 function MagneticButton({ children, className, onClick }: any) {
   const ref = useRef<HTMLButtonElement>(null)
