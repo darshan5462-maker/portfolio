@@ -11,7 +11,7 @@ export const PERSONAL = {
   company: 'ShadowQuant Dynamics',
   companyUrl: 'https://shadowquantdynamics.com/',
   github: 'https://github.com/darshan5462-maker',
-  linkedin: '#',
+  linkedin: 'https://www.linkedin.com/in/darshan-mang-56110136a/',
   instagram: 'https://www.instagram.com/darshan__5462',
   available: true,
 }
