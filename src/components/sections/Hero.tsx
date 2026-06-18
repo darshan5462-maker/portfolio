@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation'
 import { ArrowDown, GitBranch, Globe, AtSign, Mail, ExternalLink } from 'lucide-react'
 import { PERSONAL, STATS } from '../../data'
 
-const PROFILE_URL = '/profile.jpeg'
+const PROFILE_URL = '/profile..jpg'
 
 function MagneticButton({ children, className, onClick }: any) {
   const ref = useRef<HTMLButtonElement>(null)
