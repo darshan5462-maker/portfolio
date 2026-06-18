@@ -86,7 +86,7 @@ export default function Hero() {
               <h1 className="font-black leading-[0.92] tracking-tight mb-4"
                 style={{ fontSize: 'clamp(3.4rem, 8vw, 7rem)' }}>
                 <span className="block text-white">DARSHAN</span>
-                <span className="block gradient-text">MANG.</span>
+                <span className="block gradient-text">M M.</span>
               </h1>
             </motion.div>
 
