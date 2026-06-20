@@ -157,10 +157,10 @@ export default function Hero() {
               className="flex items-center gap-3"
             >
               {[
-                { icon: FaGithub, href: PERSONAL.github, label: "GitHub" },
-                { icon: FaLinkedin, href: PERSONAL.linkedin, label: "LinkedIn" },
-                { icon: FaInstagram, href: PERSONAL.instagram, label: "Instagram" },
-                { icon: FaEnvelope, href: `mailto:${PERSONAL.email}`, label: "Email" },
+                { icon: SiGithub, href: PERSONAL.github, label: "GitHub" },
+                { icon: SiLinkedin, href: PERSONAL.linkedin, label: "LinkedIn" },
+                { icon: SiInstagram, href: PERSONAL.instagram, label: "Instagram" },
+                { icon: SiGmail, href: `mailto:${PERSONAL.email}`, label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
