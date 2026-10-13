@@ -14,7 +14,7 @@ import {
 import { LinkedinIcon } from '../ui/Icons'
 import { PERSONAL, STATS } from '../../data'
 
-const PROFILE_IMAGE = '/profile..jpg'
+const PROFILE_IMAGE = '/profile.jpg'
 
 interface HeroProps {
   onOpenResume: () => void
@@ -272,11 +272,11 @@ export default function Hero({ onOpenResume }: HeroProps) {
 
                 {/* Profile Snapshot Row */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden border border-white/15 dark:border-white/15 border-slate-300 flex-shrink-0 bg-violet-950/40 shadow-md">
+                  <div className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-2xl overflow-hidden border border-cyan-500/40 dark:border-cyan-500/40 border-slate-300 flex-shrink-0 bg-violet-950/40 shadow-xl shadow-cyan-500/15">
                     <img
                       src={PROFILE_IMAGE}
                       alt="Darshan Mang"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-center"
                       onError={e => {
                         const target = e.target as HTMLImageElement
                         target.style.display = 'none'
