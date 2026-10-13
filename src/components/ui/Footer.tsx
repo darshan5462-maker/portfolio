@@ -1,5 +1,5 @@
 import { GitBranch, Mail, ArrowUp } from 'lucide-react'
-import { LinkedinIcon } from './Icons'
+import { LinkedinIcon, InstagramIcon } from './Icons'
 import { PERSONAL } from '../../data'
 
 export default function Footer() {
@@ -88,6 +88,16 @@ export default function Footer() {
                 title="LinkedIn"
               >
                 <LinkedinIcon size={16} />
+              </a>
+              <a
+                href={PERSONAL.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Profile"
+                className="w-9 h-9 rounded-xl glass flex items-center justify-center text-white/60 hover:text-white hover:border-pink-500/40 transition-colors"
+                title="Instagram: @darshan__5462"
+              >
+                <InstagramIcon size={16} />
               </a>
               <a
                 href={`mailto:${PERSONAL.email}`}

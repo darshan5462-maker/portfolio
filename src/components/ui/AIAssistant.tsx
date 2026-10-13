@@ -36,15 +36,19 @@ function getAIResponse(q: string): string {
   }
 
   if (lower.includes('hire') || lower.includes('available') || lower.includes('internship') || lower.includes('opportunity')) {
-    return `Yes! Darshan is **actively available for 2026 opportunities**, including software engineering internships, full-stack developer roles, AI project collaborations, and client engagements.\n\nContact him directly at **darshan5462@gmail.com** or call **+91 9164406348**.`
+    return `Yes! Darshan is **actively available for 2026 opportunities**, including software engineering internships, full-stack developer roles, AI project collaborations, and client engagements.\n\nContact him directly at **darshan5462@gmail.com** or call **+91 9480765462**.`
   }
 
   if (lower.includes('resume') || lower.includes('cv')) {
     return `You can download Darshan's resume by clicking the **"Download Resume"** button in the hero section or navigation bar. You can also email him directly at **darshan5462@gmail.com** for a tailored copy!`
   }
 
-  if (lower.includes('contact') || lower.includes('email') || lower.includes('reach') || lower.includes('phone')) {
-    return `**Direct Contact Details:**\n\n• **Email:** darshan5462@gmail.com\n• **Phone:** +91 9164406348\n• **GitHub:** github.com/darshan5462-maker\n• **LinkedIn:** linkedin.com/in/darshan-mang-56110136a\n• **Location:** Karnataka, India`
+  if (lower.includes('instagram') || lower.includes('insta')) {
+    return `You can connect with Darshan on Instagram at **@darshan__5462**:\nhttps://www.instagram.com/darshan__5462/`
+  }
+
+  if (lower.includes('contact') || lower.includes('email') || lower.includes('reach') || lower.includes('phone') || lower.includes('call') || lower.includes('number')) {
+    return `**Direct Contact Details:**\n\n• **Email:** darshan5462@gmail.com\n• **Phone:** +91 9480765462\n• **Instagram:** https://www.instagram.com/darshan__5462/\n• **GitHub:** github.com/darshan5462-maker\n• **LinkedIn:** linkedin.com/in/darshan-mang-56110136a\n• **Location:** Karnataka, India`
   }
 
   return `Darshan is a **Software Developer & Product Builder** based in Karnataka, India. He has shipped 18 live web applications, co-founded ShadowQuant Dynamics, and studies Computer Science at BIET Davangere.\n\nFeel free to ask me about his tech stack, featured projects, or how to reach him!`
