@@ -1,289 +1,384 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { ArrowDown, GitBranch, Globe, AtSign, Mail, ExternalLink } from 'lucide-react'
+import {
+  Download,
+  Mail,
+  GitBranch,
+  Terminal,
+  ArrowDown,
+  Building,
+  CheckCircle2,
+  Code2,
+} from 'lucide-react'
+import { LinkedinIcon } from '../ui/Icons'
 import { PERSONAL, STATS } from '../../data'
 
-const PROFILE_URL = '/profile..jpg'
+const PROFILE_IMAGE = '/profile..jpg'
 
-function MagneticButton({ children, className, onClick }: any) {
-  const ref = useRef<HTMLButtonElement>(null)
+interface HeroProps {
+  onOpenResume: () => void
+}
+
+function MagneticButton({
+  children,
+  className,
+  onClick,
+  href,
+  download,
+}: {
+  children: React.ReactNode
+  className?: string
+  onClick?: () => void
+  href?: string
+  download?: string
+}) {
+  const ref = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const sx = useSpring(x, { stiffness: 200, damping: 20 })
-  const sy = useSpring(y, { stiffness: 200, damping: 20 })
+  const sx = useSpring(x, { stiffness: 220, damping: 22 })
+  const sy = useSpring(y, { stiffness: 220, damping: 22 })
 
   const handleMove = (e: React.MouseEvent) => {
-    const rect = ref.current!.getBoundingClientRect()
+    if (!ref.current) return
+    const rect = ref.current.getBoundingClientRect()
     const cx = rect.left + rect.width / 2
     const cy = rect.top + rect.height / 2
-    x.set((e.clientX - cx) * 0.4)
-    y.set((e.clientY - cy) * 0.4)
+    x.set((e.clientX - cx) * 0.22)
+    y.set((e.clientY - cy) * 0.22)
   }
-  const handleLeave = () => { x.set(0); y.set(0) }
 
-  return (
-    <motion.button
+  const handleLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
+
+  const content = (
+    <motion.div
       ref={ref}
       style={{ x: sx, y: sy }}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      onClick={onClick}
       className={className}
+      onClick={onClick}
     >
       {children}
-    </motion.button>
+    </motion.div>
   )
+
+  if (href) {
+    return (
+      <a href={href} download={download} className="inline-block">
+        {content}
+      </a>
+    )
+  }
+
+  return content
 }
 
-function GradientOrb({ className }: { className: string }) {
-  return <div className={`absolute rounded-full blur-[100px] pointer-events-none ${className}`} />
-}
-
-export default function Hero() {
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+export default function Hero({ onOpenResume }: HeroProps) {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Gradient orbs */}
-      <GradientOrb className="w-[600px] h-[600px] bg-violet-600/20 top-[-200px] left-[-200px] animate-[float_12s_ease-in-out_infinite]" />
-      <GradientOrb className="w-[500px] h-[500px] bg-cyan-500/15 bottom-[-150px] right-[-150px] animate-[float_15s_ease-in-out_infinite_2s]" />
-      <GradientOrb className="w-[400px] h-[400px] bg-pink-600/10 top-[40%] left-[40%] animate-[float_18s_ease-in-out_infinite_4s]" />
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 sm:pb-24 overflow-hidden"
+    >
+      {/* Background Grid & Ambient Lighting */}
+      <div className="absolute inset-0 grid-bg opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 subtle-noise opacity-30 pointer-events-none" />
 
-      {/* Grid background */}
-      <div className="absolute inset-0 grid-bg opacity-100" />
-
-      {/* Gradient mesh overlay */}
-      <div className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 80% 70% at 50% -20%, rgba(124,58,237,0.15) 0%, transparent 60%)' }}
+      {/* Ambient Radial Lights */}
+      <div
+        className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-20 dark:opacity-25"
+        style={{ background: 'radial-gradient(circle, #7c3aed 0%, transparent 70%)' }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/4 translate-x-1/3 translate-y-1/3 w-[450px] h-[450px] rounded-full blur-[140px] pointer-events-none opacity-15 dark:opacity-20"
+        style={{ background: 'radial-gradient(circle, #06b6d4 0%, transparent 70%)' }}
       />
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* Left column */}
-          <div>
-            {/* Badge */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Left Column (Hero Content) */}
+          <div className="lg:col-span-7 text-left">
+            {/* Availability Indicator Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass mb-8 border border-white/10"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass mb-6 border border-white/10 dark:border-white/10 border-slate-300"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/80 animate-[glow-pulse_2s_ease-in-out_infinite]" />
-              <span className="text-xs font-semibold text-white/70 tracking-widest uppercase font-mono">
-                Available for projects · 2026
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" />
+              <span className="text-[11px] font-semibold tracking-wider uppercase font-mono text-white/80 dark:text-white/80 text-slate-700">
+                {PERSONAL.availabilityText}
               </span>
             </motion.div>
 
-            {/* Name */}
+            {/* Headline */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <h1 className="font-black leading-[0.92] tracking-tight mb-4"
-                style={{ fontSize: 'clamp(3.4rem, 8vw, 7rem)' }}>
-                <span className="block text-white">DARSHAN</span>
-                <span className="block gradient-text">M M.</span>
+              <h1 className="font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-4 text-white dark:text-white text-slate-900">
+                DARSHAN
+                <span className="block text-2xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight gradient-text mt-1">
+                  Software Developer & Product Builder
+                </span>
               </h1>
             </motion.div>
 
-            {/* Typewriter role */}
+            {/* Typewriter role subtext */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45 }}
-              className="text-white/50 font-mono text-sm mb-6 tracking-wider"
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="flex items-center gap-2 text-xs sm:text-sm font-mono text-white/50 dark:text-white/50 text-slate-500 mb-6"
             >
-              <span className="text-violet-400">›_</span>{' '}
+              <Terminal size={14} className="text-violet-400" />
+              <span className="text-violet-400">spec:</span>
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer', 2200,
-                  'Co-founder @ ShadowQuant', 2200,
-                  'AI Builder', 1800,
-                  'WebGL Engineer', 1800,
-                  'Product Shipper', 1800,
+                  'Full-Stack Web Architectures',
+                  2200,
+                  'AI-Assisted Workflow Tools',
+                  2000,
+                  'Fintech & Marketplace Platforms',
+                  2000,
+                  'Co-founder @ ShadowQuant Dynamics',
+                  2200,
                 ]}
                 wrapper="span"
-                speed={60}
+                speed={55}
                 repeat={Infinity}
-                className="text-white/80"
+                className="text-white/90 dark:text-white/90 text-slate-800 font-semibold"
               />
             </motion.div>
 
-            {/* Bio */}
+            {/* Introduction paragraph */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55 }}
-              className="text-white/50 text-base leading-relaxed max-w-[50ch] mb-10 font-light"
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="text-base sm:text-lg text-white/70 dark:text-white/70 text-slate-600 font-light leading-relaxed max-w-xl mb-8"
             >
-              {PERSONAL.bio}
+              {PERSONAL.heroIntroduction}
             </motion.p>
 
-            {/* CTA buttons */}
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65 }}
-              className="flex items-center gap-3 flex-wrap mb-10"
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="flex flex-wrap items-center gap-3.5 mb-10"
             >
               <MagneticButton
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-white
-                  bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500
-                  shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-shadow"
                 onClick={() => scrollTo('projects')}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 shadow-lg shadow-violet-600/30 transition-all cursor-pointer"
               >
-                <ExternalLink size={15} />
-                View My Work
+                <Code2 size={16} />
+                Explore My Work
               </MagneticButton>
+
               <MagneticButton
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-white/80
-                  glass border border-white/12 hover:bg-white/08 hover:border-white/20 transition-all"
+                onClick={onOpenResume}
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-xs sm:text-sm glass border border-white/12 dark:border-white/12 border-slate-300 text-white/90 dark:text-white/90 text-slate-800 hover:border-violet-500/40 hover:text-white transition-all cursor-pointer"
+              >
+                <Download size={15} className="text-violet-400" />
+                Download Resume
+              </MagneticButton>
+
+              <MagneticButton
                 onClick={() => scrollTo('contact')}
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-xs sm:text-sm glass border border-white/12 dark:border-white/12 border-slate-300 text-white/80 dark:text-white/80 text-slate-700 hover:border-white/25 hover:text-white transition-all cursor-pointer"
               >
                 <Mail size={15} />
                 Contact Me
               </MagneticButton>
             </motion.div>
 
-            {/* Socials */}
+            {/* Verified Social Channels */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.75 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
               className="flex items-center gap-3"
             >
-              {[
-                { icon: GitBranch, href: PERSONAL.github, label: 'GitHub' },
-                { icon: Globe, href: PERSONAL.linkedin, label: 'LinkedIn' },
-                { icon: AtSign, href: PERSONAL.instagram, label: 'Instagram' },
-                { icon: Mail, href: `mailto:${PERSONAL.email}`, label: 'Email' },
-              ].map(({ icon: Icon, href, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  whileHover={{ y: -3 }}
-                  className="w-10 h-10 rounded-xl glass flex items-center justify-center text-white/50 hover:text-white transition-colors"
-                  title={label}
-                >
-                  <Icon size={16} />
-                </motion.a>
-              ))}
+              <span className="text-xs font-mono text-white/40 dark:text-white/40 text-slate-400 uppercase tracking-widest mr-1">
+                Verified:
+              </span>
+              <a
+                href={PERSONAL.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+                className="w-9 h-9 rounded-xl glass flex items-center justify-center text-white/60 hover:text-white hover:border-violet-500/40 transition-colors"
+                title="GitHub: darshan5462-maker"
+              >
+                <GitBranch size={16} />
+              </a>
+              <a
+                href={PERSONAL.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                className="w-9 h-9 rounded-xl glass flex items-center justify-center text-white/60 hover:text-white hover:border-cyan-500/40 transition-colors"
+                title="LinkedIn: Darshan Mang"
+              >
+                <LinkedinIcon size={16} />
+              </a>
+              <a
+                href={`mailto:${PERSONAL.email}`}
+                aria-label="Direct Email"
+                className="w-9 h-9 rounded-xl glass flex items-center justify-center text-white/60 hover:text-white hover:border-emerald-500/40 transition-colors"
+                title={`Email: ${PERSONAL.email}`}
+              >
+                <Mail size={16} />
+              </a>
             </motion.div>
           </div>
 
-          {/* Right column — profile card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            {/* Profile image with glow */}
-            <div className="relative">
-              {/* Outer glow rings */}
-              <div className="absolute inset-[-24px] rounded-full border border-violet-500/20 animate-[float_8s_ease-in-out_infinite]" />
-              <div className="absolute inset-[-48px] rounded-full border border-cyan-500/10 animate-[float_12s_ease-in-out_infinite_1s]" />
+          {/* Right Column (Profile & Developer Terminal Visual) */}
+          <div className="lg:col-span-5 relative flex flex-col items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-full max-w-md relative"
+            >
+              {/* Outer Glow */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-violet-600/20 via-cyan-500/10 to-transparent blur-2xl pointer-events-none" />
 
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-3xl blur-3xl bg-gradient-to-br from-violet-600/40 to-cyan-500/30 scale-110" />
-
-              {/* Photo */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl overflow-hidden
-                  border border-white/15 shadow-2xl shadow-violet-500/20"
-              >
-                <img
-                  src={PROFILE_URL}
-                  alt="Darshan Mang"
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    const t = e.target as HTMLImageElement
-                    t.style.display = 'none'
-                    t.nextElementSibling?.setAttribute('style', 'display:flex')
-                  }}
-                />
-                <div className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-violet-900/80 to-cyan-900/60 text-6xl font-black text-white">
-                  D
+              {/* Developer Terminal Card */}
+              <div className="glass-card rounded-2xl border border-white/10 dark:border-white/10 border-slate-300 p-5 shadow-2xl relative overflow-hidden text-left">
+                {/* Terminal Window Header */}
+                <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-white/8 dark:border-white/8 border-slate-200">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    <span className="text-[11px] font-mono text-white/40 dark:text-white/40 text-slate-400 ml-2">
+                      darshan@dev: ~
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-violet-600/15 text-violet-300 border border-violet-500/30">
+                    node v24.x
+                  </span>
                 </div>
-                {/* Holographic overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10" />
-              </motion.div>
 
-              {/* Floating stat badges */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute -right-6 top-8 glass rounded-xl px-4 py-3 border border-white/10 shadow-xl"
-              >
-                <div className="text-2xl font-black text-white leading-none">10+</div>
-                <div className="text-[10px] text-white/50 mt-0.5 uppercase tracking-wider font-mono">Live Projects</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.95 }}
-                className="absolute -left-6 bottom-16 glass rounded-xl px-4 py-3 border border-white/10 shadow-xl"
-              >
-                <div className="text-2xl font-black gradient-text leading-none">AI</div>
-                <div className="text-[10px] text-white/50 mt-0.5 uppercase tracking-wider font-mono">Voice Agents</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.05 }}
-                className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass rounded-xl px-4 py-2.5 border border-white/10 whitespace-nowrap shadow-xl"
-              >
-                <div className="text-xs text-white/60 font-mono flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Co-founder @ ShadowQuant Dynamics
+                {/* Profile Snapshot Row */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden border border-white/15 dark:border-white/15 border-slate-300 flex-shrink-0 bg-violet-950/40 shadow-md">
+                    <img
+                      src={PROFILE_IMAGE}
+                      alt="Darshan Mang"
+                      className="w-full h-full object-cover object-top"
+                      onError={e => {
+                        const target = e.target as HTMLImageElement
+                        target.style.display = 'none'
+                        target.nextElementSibling?.setAttribute('style', 'display:flex')
+                      }}
+                    />
+                    <div className="hidden w-full h-full items-center justify-center text-lg font-black text-white bg-gradient-to-br from-violet-600 to-cyan-600">
+                      D
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-sm sm:text-base text-white dark:text-white text-slate-900 leading-snug">
+                      Darshan Mang
+                    </h3>
+                    <p className="text-xs text-violet-400 font-mono">
+                      Full-Stack · AI & Products
+                    </p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Building size={11} className="text-white/40" />
+                      <a
+                        href={PERSONAL.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-white/60 dark:text-white/60 text-slate-500 hover:text-white transition-colors"
+                      >
+                        Co-founder @ ShadowQuant
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            </div>
-          </motion.div>
+
+                {/* Technical telemetry snippets */}
+                <div className="space-y-2 font-mono text-xs rounded-xl p-3 bg-black/40 dark:bg-black/40 bg-slate-900/5 text-white/70 dark:text-white/70 text-slate-700 border border-white/6 dark:border-white/6 border-slate-200">
+                  <div className="flex justify-between">
+                    <span className="text-white/40 dark:text-white/40 text-slate-400">education:</span>
+                    <span className="text-right">B.E. Computer Science (BIET)</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/40 dark:text-white/40 text-slate-400">deployed_apps:</span>
+                    <span className="text-emerald-400 font-semibold">18 Live Verified Projects</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/40 dark:text-white/40 text-slate-400">specialization:</span>
+                    <span>React · Node.js · AI Forensics</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/40 dark:text-white/40 text-slate-400">status:</span>
+                    <span className="text-cyan-400">shipping_daily = true</span>
+                  </div>
+                </div>
+
+                {/* Status Bar */}
+                <div className="mt-4 pt-3 border-t border-white/6 dark:border-white/6 border-slate-200 flex items-center justify-between text-[11px] font-mono text-white/40 dark:text-white/40 text-slate-500">
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-400" />
+                    Karnataka, India
+                  </span>
+                  <span>ready_for_hire</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Stats row */}
+        {/* Minimal Metrics Row */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.85 }}
-          className="mt-24 pt-10 border-t border-white/8 grid grid-cols-2 sm:grid-cols-4 gap-8"
+          transition={{ duration: 0.6, delay: 0.75 }}
+          className="mt-16 pt-8 border-t border-white/8 dark:border-white/8 border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 text-left"
         >
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 + i * 0.1 }}
-              className="text-center sm:text-left"
-            >
-              <div className="text-3xl font-black gradient-text leading-none mb-1">{s.value}</div>
-              <div className="text-xs text-white/40 uppercase tracking-widest font-mono">{s.label}</div>
-            </motion.div>
+          {STATS.map(stat => (
+            <div key={stat.label} className="p-3">
+              <div className="text-2xl sm:text-3xl font-black gradient-text tracking-tight">
+                {stat.value}
+              </div>
+              <div className="text-xs font-bold text-white/80 dark:text-white/80 text-slate-800 uppercase tracking-wider font-mono mt-0.5">
+                {stat.label}
+              </div>
+              <div className="text-[11px] text-white/40 dark:text-white/40 text-slate-400 font-mono mt-0.5">
+                {stat.detail}
+              </div>
+            </div>
           ))}
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        onClick={() => scrollTo('about')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
-      >
-        <span className="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
-          <ArrowDown size={14} />
-        </motion.div>
-      </motion.button>
+        {/* Scroll down indicator */}
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => scrollTo('about')}
+            aria-label="Scroll to about section"
+            className="flex flex-col items-center gap-1.5 text-white/30 dark:text-white/30 text-slate-400 hover:text-white transition-colors group cursor-pointer"
+          >
+            <span className="text-[10px] font-mono tracking-widest uppercase">Explore</span>
+            <ArrowDown
+              size={14}
+              className="group-hover:translate-y-1 transition-transform animate-bounce"
+            />
+          </button>
+        </div>
+      </div>
     </section>
   )
 }

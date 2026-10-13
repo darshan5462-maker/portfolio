@@ -1,26 +1,32 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon } from 'lucide-react'
+import { Menu, X, Sun, Moon, FileText, ArrowUpRight } from 'lucide-react'
 import { useTheme, useActiveSection } from '../../hooks'
 
-const links = [
+interface NavbarProps {
+  onOpenResume: () => void
+}
+
+const navLinks = [
+  { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Work' },
-  { id: 'experience', label: 'Experience' },
+  { id: 'journey', label: 'Journey' },
+  { id: 'github', label: 'GitHub' },
   { id: 'contact', label: 'Contact' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onOpenResume }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme, toggle } = useTheme()
   const active = useActiveSection()
 
   useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 24)
-    window.addEventListener('scroll', h, { passive: true })
-    return () => window.removeEventListener('scroll', h)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollTo = (id: string) => {
@@ -30,103 +36,146 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-[200] transition-all duration-300 rounded-2xl
-          ${scrolled ? 'glass shadow-2xl shadow-black/30' : 'bg-transparent'}
-          px-5 py-3 flex items-center gap-6`}
-        style={{ width: 'min(780px, 94vw)' }}
-      >
-        {/* Logo */}
-        <button
-          onClick={() => scrollTo('home')}
-          className="font-bold text-sm tracking-tight flex items-center gap-2 shrink-0 mr-2"
+      <header className="fixed top-0 left-0 right-0 z-[200] px-4 sm:px-6 pt-3 sm:pt-4 pointer-events-none">
+        <motion.nav
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className={`pointer-events-auto max-w-6xl mx-auto rounded-2xl transition-all duration-300 px-4 sm:px-6 py-3 flex items-center justify-between gap-4 ${
+            scrolled
+              ? 'glass shadow-2xl shadow-black/25 dark:shadow-black/50 border border-white/10 dark:border-white/10 border-slate-200/90'
+              : 'bg-transparent border border-transparent'
+          }`}
         >
-          <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center text-white text-xs font-black shadow-lg shadow-violet-500/30">
-            DM
-          </span>
-          <span className="text-white/80 hidden sm:block">darshan.dev</span>
-        </button>
+          {/* Brand Logo */}
+          <button
+            onClick={() => scrollTo('home')}
+            aria-label="Darshan homepage"
+            className="flex items-center gap-2.5 font-bold tracking-tight text-white dark:text-white text-slate-900 group"
+          >
+            <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center text-white text-xs font-black shadow-lg shadow-violet-500/25 group-hover:scale-105 transition-transform">
+              D
+            </span>
+            <span className="text-base sm:text-lg font-black tracking-tight">
+              DARSHAN<span className="text-violet-400">.dev</span>
+            </span>
+          </button>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
-          {links.map(l => (
+          {/* Desktop Links */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map(link => {
+              const isActive = active === link.id
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => scrollTo(link.id)}
+                  className={`relative px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide uppercase transition-colors ${
+                    isActive
+                      ? 'text-white dark:text-white text-slate-900'
+                      : 'text-white/60 dark:text-white/60 text-slate-600 hover:text-white dark:hover:text-white hover:text-slate-900'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-active-pill"
+                      className="absolute inset-0 rounded-lg bg-white/10 dark:bg-white/10 bg-slate-200"
+                      transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Right Action Icons */}
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle */}
             <button
-              key={l.id}
-              onClick={() => scrollTo(l.id)}
-              className={`relative px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200
-                ${active === l.id ? 'text-white' : 'text-white/50 hover:text-white/80'}`}
+              onClick={toggle}
+              aria-label="Toggle light and dark theme"
+              className="w-9 h-9 rounded-xl glass flex items-center justify-center text-white/70 dark:text-white/70 text-slate-700 hover:text-white transition-colors border border-white/10 dark:border-white/10 border-slate-300"
             >
-              {active === l.id && (
-                <motion.div
-                  layoutId="nav-active"
-                  className="absolute inset-0 rounded-lg bg-white/10"
-                  transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
-                />
-              )}
-              <span className="relative z-10">{l.label}</span>
+              {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
             </button>
-          ))}
-        </div>
 
-        {/* Right actions */}
-        <div className="flex items-center gap-2 ml-auto">
-          <button
-            onClick={toggle}
-            className="w-8 h-8 rounded-lg glass flex items-center justify-center text-white/60 hover:text-white transition-colors"
-          >
-            {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
-          </button>
-          <motion.button
-            onClick={() => scrollTo('contact')}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-semibold
-              bg-gradient-to-r from-violet-600 to-cyan-600 text-white
-              shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
-          >
-            Hire Me
-          </motion.button>
-          <button
-            className="md:hidden w-8 h-8 rounded-lg glass flex items-center justify-center text-white/70"
-            onClick={() => setMobileOpen(v => !v)}
-          >
-            {mobileOpen ? <X size={15} /> : <Menu size={15} />}
-          </button>
-        </div>
-      </motion.nav>
+            {/* Resume Button */}
+            <button
+              onClick={onOpenResume}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold glass border border-white/12 dark:border-white/12 border-slate-300 text-white/80 dark:text-white/80 text-slate-800 hover:border-violet-500/40 hover:text-white transition-all"
+            >
+              <FileText size={13} className="text-violet-400" />
+              Resume
+            </button>
 
-      {/* Mobile menu */}
+            {/* Hire Me / Contact CTA */}
+            <button
+              onClick={() => scrollTo('contact')}
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 shadow-md shadow-violet-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <span>Contact</span>
+              <ArrowUpRight size={13} />
+            </button>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setMobileOpen(v => !v)}
+              aria-label="Toggle mobile menu"
+              className="lg:hidden w-9 h-9 rounded-xl glass flex items-center justify-center text-white/80 dark:text-white/80 text-slate-800 border border-white/10 dark:border-white/10 border-slate-300"
+            >
+              {mobileOpen ? <X size={17} /> : <Menu size={17} />}
+            </button>
+          </div>
+        </motion.nav>
+      </header>
+
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-20 left-4 right-4 z-[199] glass rounded-2xl p-4 shadow-2xl shadow-black/40"
+            className="fixed top-20 left-4 right-4 z-[199] glass-card rounded-2xl p-4 shadow-2xl border border-white/12 dark:border-white/12 border-slate-300 lg:hidden"
           >
-            {links.map((l, i) => (
-              <motion.button
-                key={l.id}
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.06 }}
-                onClick={() => scrollTo(l.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors
-                  ${active === l.id ? 'bg-white/10 text-white' : 'text-white/60 hover:text-white hover:bg-white/05'}`}
-              >
-                {l.label}
-              </motion.button>
-            ))}
-            <button
-              onClick={() => { scrollTo('contact'); setMobileOpen(false) }}
-              className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white text-sm font-semibold"
-            >
-              Hire Me
-            </button>
+            <div className="flex flex-col gap-1">
+              {navLinks.map(link => {
+                const isActive = active === link.id
+                return (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollTo(link.id)}
+                    className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                      isActive
+                        ? 'bg-violet-600/20 text-violet-300 border border-violet-500/30'
+                        : 'text-white/70 dark:text-white/70 text-slate-700 hover:bg-white/5 hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                )
+              })}
+
+              <div className="pt-3 mt-2 border-t border-white/8 dark:border-white/8 border-slate-200 flex flex-col gap-2">
+                <button
+                  onClick={() => {
+                    onOpenResume()
+                    setMobileOpen(false)
+                  }}
+                  className="w-full py-2.5 rounded-xl glass border border-white/10 text-white dark:text-white text-slate-800 text-xs font-semibold flex items-center justify-center gap-2"
+                >
+                  <FileText size={14} className="text-violet-400" />
+                  Download / View Resume
+                </button>
+                <button
+                  onClick={() => scrollTo('contact')}
+                  className="w-full py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white text-xs font-bold text-center"
+                >
+                  Get in Touch
+                </button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

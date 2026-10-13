@@ -18,8 +18,8 @@ export function useMagneticButton() {
     const rect = el.getBoundingClientRect()
     const cx = rect.left + rect.width / 2
     const cy = rect.top + rect.height / 2
-    const dx = (e.clientX - cx) * 0.35
-    const dy = (e.clientY - cy) * 0.35
+    const dx = (e.clientX - cx) * 0.25
+    const dy = (e.clientY - cy) * 0.25
     el.style.transform = `translate(${dx}px, ${dy}px)`
   }, [])
   const handleMouseLeave = useCallback(() => {
@@ -39,26 +39,52 @@ export function useMagneticButton() {
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState<'dark'|'light'>(() => {
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     if (typeof window !== 'undefined') {
-      return (localStorage.getItem('theme') as 'dark'|'light') || 'dark'
+      const saved = localStorage.getItem('theme') as 'dark' | 'light'
+      if (saved) return saved
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light'
+      }
     }
     return 'dark'
   })
+
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'light') { root.classList.add('light'); document.body.classList.add('light') }
-    else { root.classList.remove('light'); document.body.classList.remove('light') }
+    if (theme === 'dark') {
+      root.classList.add('dark')
+      root.classList.remove('light')
+      document.body.classList.add('dark')
+      document.body.classList.remove('light')
+    } else {
+      root.classList.remove('dark')
+      root.classList.add('light')
+      document.body.classList.remove('dark')
+      document.body.classList.add('light')
+    }
     localStorage.setItem('theme', theme)
   }, [theme])
-  return { theme, toggle: () => setTheme(t => t === 'dark' ? 'light' : 'dark') }
+
+  return {
+    theme,
+    toggle: () => setTheme(t => (t === 'dark' ? 'light' : 'dark')),
+  }
 }
 
-export function useInView(threshold = 0.15) {
+export function useInView(threshold = 0.12) {
   const ref = useRef<HTMLElement>(null)
   const [inView, setInView] = useState(false)
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect() } }, { threshold })
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setInView(true)
+          obs.disconnect()
+        }
+      },
+      { threshold }
+    )
     if (ref.current) obs.observe(ref.current)
     return () => obs.disconnect()
   }, [threshold])
@@ -69,9 +95,14 @@ export function useActiveSection() {
   const [active, setActive] = useState('home')
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]')
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id) })
-    }, { threshold: 0.4 })
+    const obs = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) setActive(e.target.id)
+        })
+      },
+      { threshold: 0.35 }
+    )
     sections.forEach(s => obs.observe(s))
     return () => obs.disconnect()
   }, [])
